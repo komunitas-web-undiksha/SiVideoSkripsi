@@ -27,23 +27,23 @@ Start the Server
 ```sh
 $ php artisan serve
 ```
-### Todos
+### Status
 
-| KETERANGAN | PETENJUK |
-| ------ | ------ |
-|  | form mahasiswa isi import data |
-|  | form manajemen users |
-|  | form manajemen karya ini add on karya |
-|  | form select karya untuk validasi |
-|  | form antrian validasi yang sedang dipilih untuk petugas |
-|  | form antrian validasi yang sudah dikerjakan untuk petugas |
-|  | form validasi isi pertanyaan untuk finish validasi|
-|  | form select karya untuk edit |
-|  | form antrian edit yang sedang dipilih untuk petugas |
-|  | form antrian edit yang sudah dikerjakan untuk petugas |
-|  | form edit |
-|  | form untuk cek validasi pake qr code |
-|  | form untuk cek urutan upload |
+| Frontend | Backend |PETENJUK |
+| ------ | ------ |------ |
+| |  | form mahasiswa isi import data |
+| |  | form manajemen users |
+| |  | form manajemen karya ini add on karya |
+| |  | form select karya untuk validasi |
+| |  | form antrian validasi yang sedang dipilih untuk petugas |
+| |  | form antrian validasi yang sudah dikerjakan untuk petugas |
+| |  | form validasi isi pertanyaan untuk finish validasi|
+| |  | form select karya untuk edit |
+| |  | form antrian edit yang sedang dipilih untuk petugas |
+| |  | form antrian edit yang sudah dikerjakan untuk petugas |
+| |  | form edit |
+| |  | form untuk cek validasi pake qr code |
+| |  | form untuk cek urutan upload |
 
 
 
