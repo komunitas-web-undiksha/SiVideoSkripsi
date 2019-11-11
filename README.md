@@ -18,6 +18,10 @@ $ composer install
 $ cp .env.example .env
 $ php artisan key:generate
 ```
+Do migration
+```sh
+$ php artisan migrate
+```
 
 Start the Server
 ```sh
