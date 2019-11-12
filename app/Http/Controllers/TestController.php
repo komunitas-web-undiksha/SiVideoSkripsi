@@ -9,7 +9,7 @@ class TestController extends Controller
 {
     public function index(Request $request)
     {
-        if ($request->ajax()) {
+        if ($request->ajax()|| true) {
             $data = DB::table('mahasiswa')->get();
             return DataTables::of($data)
                 ->addIndexColumn()
