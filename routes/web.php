@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/master', function () {
     return view('master');
 });
 
@@ -21,3 +21,36 @@ Route::post('/karya/store','KaryaController@store')->name('karya.store');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// Pemanggilan Menu2
+Route::get('/', function () {
+    return view('Dashboard');
+});
+
+Route::get('/Error', function () {
+    return view('Error');
+});
+
+Route::get('/Table', function () {
+    return view('Table');
+});
+
+Route::get('/Profile', function () {
+    return view('Profile');
+});
+
+Route::get('/Login', function () {
+    return view('Login');
+});
+
+Route::get('/Register', function () {
+    return view('Register');
+});
+
+Route::get('/ForgotP', function () {
+    return view('ForgotP');
+});
+
+
+// Pemanggilan Menu2
