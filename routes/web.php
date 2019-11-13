@@ -18,11 +18,6 @@ Route::get('/', function () {
 
 Route::get('data','TestController@index')->name('users.index');
 
-Route::get('/tes', function () {
-    return view('master');
-});
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
