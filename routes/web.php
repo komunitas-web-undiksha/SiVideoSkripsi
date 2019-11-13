@@ -12,11 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('master');
 });
 
-
-Route::get('data','TestController@index')->name('users.index');
+Route::get('/karya','KaryaController@index');
+Route::post('/karya/store','KaryaController@store')->name('karya.store');
 
 Auth::routes();
 

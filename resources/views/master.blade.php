@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SI Video Skripsi - Undiksha</title>
+    <title> @yield('title') |SI Video Skripsi Undiksha</title>
 
     <!-- Vendor CSS -->
     <link href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
@@ -106,11 +106,14 @@
                 <li>
                         <a href="/read"><i class="zmdi zmdi-format-list-bulleted"></i>Item1</a>
                     </li>
+                <li>
+                    <a href="/mahasiswa"><i class="zmdi zmdi-format-list-bulleted"></i>Upload Data Skripsi</a>
+                </li>
             </ul>
         </aside>
 
         <section style="margin-left: 20px;" id="content">
-            
+
             @yield('content')
 
         </section>
@@ -178,7 +181,7 @@
                     </ul>
                 </div>
                 <p>Sorry for the inconvenience!</p>
-            </div>   
+            </div>
         <![endif]-->
 
     <!-- Javascript Libraries -->
@@ -218,7 +221,7 @@
     <script src="js/functions.js"></script>
     <script src="js/actions.js"></script>
     <script src="js/demo.js"></script>
-    
+
 </body>
 
 </html>
