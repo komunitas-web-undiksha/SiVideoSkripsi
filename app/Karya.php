@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Karya extends Model
 {
-    protected $table = 'mahasiswa';
+    protected $table = 'karya';
     public $incrementing = false;
     protected $keyType = 'string';
     protected $fillable = ['nim','judul','directory_karya',

@@ -15,7 +15,8 @@ Route::get('/master', function () {
     return view('master');
 });
 
-Route::get('/karya','KaryaController@index');
+Route::get('/karya','KaryaController@index')->name('karya.index');
+
 Route::post('/karya/store','KaryaController@store')->name('karya.store');
 
 Auth::routes();
@@ -25,7 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Pemanggilan Menu2
 Route::get('/', function () {
-    return view('Dashboard');
+    return redirect(route('login'));
 });
 
 Route::get('/Error', function () {

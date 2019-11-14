@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -25,7 +26,27 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //protected $redirectTo = '/home';
+
+    public function redirectTo(){
+        $role = Auth::user()->role;
+        if($role == 'user')
+        {
+            return route('karya.index');
+        }else if($role == 'validator')
+        {
+
+        }else if($role == 'editor')
+        {
+
+        }else if($role == 'admin')
+        {
+
+        }else
+        {
+            return route('login');
+        }
+    }
 
     /**
      * Create a new controller instance.
@@ -35,5 +56,10 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function showLoginForm()
+    {
+        return view('Login');
     }
 }

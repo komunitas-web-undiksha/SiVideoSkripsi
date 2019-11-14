@@ -25,8 +25,8 @@
                                 class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="Profile"><i
                                 class="fas fa-user"></i><span>Profile</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="Table"><i
-                                class="fas fa-table"></i><span>Table</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{route('karya.index')}}"><i
+                                class="fas fa-table"></i><span>Karya</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="Login"><i
                                 class="far fa-user-circle"></i><span>Login</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="Register"><i

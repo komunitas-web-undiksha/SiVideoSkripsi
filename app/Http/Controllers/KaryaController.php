@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mahasiswa;
 use Illuminate\Http\Request;
 use App\Karya;
+use Illuminate\Support\Facades\Auth;
 
 class KaryaController extends Controller
 {
@@ -14,17 +16,16 @@ class KaryaController extends Controller
      */
     public function index()
     {
-        return $this->create();
-    }
+        $userId = Auth::id();
+        $userNim = Mahasiswa::getNimFromId($userId);
+        $userKarya = Karya::where('nim','=',$userNim)->first();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('karya.create');
+        if($userKarya != null)
+        {
+            return view('karya.main');
+        }else {
+            return view('karya.create');
+        }
     }
 
     /**
@@ -35,7 +36,15 @@ class KaryaController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        $userId = Auth::id();
+        $userNim = Mahasiswa::getNimFromId($userId);
+        $userData = $request->toArray();
+        $userData['nim'] = $userNim;
+        $userData['directory_karya'] = $userData['karya'];
+        $userData['directory_trailer'] = $userData['trailer'];
+        Karya::create($userData);
+
+        return redirect(route('karya.index'));
     }
 
     /**

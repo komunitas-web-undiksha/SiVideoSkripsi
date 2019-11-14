@@ -10,4 +10,9 @@ class Mahasiswa extends Model
     public $incrementing = false;
     protected $keyType = 'string';
     public $timestamps = false;
+
+    static function getNimFromId($id)
+    {
+        return self::select('nim')->where('user_id','=',$id)->first()->nim;
+    }
 }

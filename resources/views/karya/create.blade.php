@@ -1,9 +1,8 @@
-@extends('master')
+@extends('layouts.Main')
 
-@section('title', 'Upload Karya')
+@section('judul', 'Upload Karya')
 
-@section('content')
-
+@section('konten')
     <div class="container">
         <div class="c-header">
             <h2>Form Elements</h2>
@@ -19,121 +18,116 @@
 
                 <form action="{{route('karya.store')}}" method="post">
                     @csrf
-                <div class="form-group">
-                    <div class="fg-line">
-                        <input type="text" name="judul" class="form-control input-lg" placeholder="Judul Karya">
-                    </div>
-                </div>
-
-
-                <div class="form-group">
-                    <p class="c-black f-500 m-b-20 m-t-20">Jenis Karya</p>
-
-                    <label class="radio radio-inline m-r-20">
-                        <input type="radio" name="jenis" value="game">
-                        <i class="input-helper"></i>
-                        Game
-                    </label>
-
-                    <label class="radio radio-inline m-r-20">
-                        <input type="radio" name="jenis" value="video">
-                        <i class="input-helper"></i>
-                        Video
-                    </label>
-
-                    <label class="radio radio-inline m-r-20">
-                        <input type="radio" name="jenis" value="aplikasi">
-                        <i class="input-helper"></i>
-                        Aplikasi
-                    </label>
-
-                </div>
-
-                <div class="form-group">
-                    <div class="fg-line">
-                        <label for="files">Select Karya</label>
-                        <input type="file" name="karya" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="fg-line">
-                        <label for="files">Select Trailer</label>
-                        <input type="file" name="trailer" class="form-control">
+                    <div class="form-group">
+                        <div class="fg-line">
+                            <input type="text" name="judul" class="form-control input-lg" placeholder="Judul Karya">
+                        </div>
                     </div>
 
-                </div>
 
-                <div class="form-group">
-                    <p class="c-black f-500 m-b-20 m-t-20">HAKI</p>
+                    <div class="form-group">
+                        <p class="c-black f-500 m-b-20 m-t-20">Jenis Karya</p>
 
-                    <label class="radio radio-inline m-r-20">
-                        <input type="radio" name="haki" value="ya">
-                        <i class="input-helper"></i>
-                        Ya
-                    </label>
+                        <label class="radio radio-inline m-r-20">
+                            <input type="radio" name="jenis" value="game">
+                            <i class="input-helper"></i>
+                            Game
+                        </label>
 
-                    <label class="radio radio-inline m-r-20">
-                        <input type="radio" name="haki" value="tidak">
-                        <i class="input-helper"></i>
-                        Tidak
-                    </label>
+                        <label class="radio radio-inline m-r-20">
+                            <input type="radio" name="jenis" value="video">
+                            <i class="input-helper"></i>
+                            Video
+                        </label>
 
-                </div>
+                        <label class="radio radio-inline m-r-20">
+                            <input type="radio" name="jenis" value="aplikasi">
+                            <i class="input-helper"></i>
+                            Aplikasi
+                        </label>
 
-                <div class="form-group">
-                    <p class="c-black f-500 m-b-20 m-t-20">DO HAKI</p>
+                    </div>
 
-                    <label class="radio radio-inline m-r-20">
-                        <input type="radio" name="do_haki" value="ya">
-                        <i class="input-helper"></i>
-                        Ya
-                    </label>
+                    <div class="form-group">
+                        <div class="fg-line">
+                            <label for="files">Select Karya</label>
+                            <input type="file" name="karya" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="fg-line">
+                            <label for="files">Select Trailer</label>
+                            <input type="file" name="trailer" class="form-control">
+                        </div>
 
-                    <label class="radio radio-inline m-r-20">
-                        <input type="radio" name="do_haki" value="tidak">
-                        <i class="input-helper"></i>
-                        Tidak
-                    </label>
+                    </div>
 
-                </div>
+                    <div class="form-group">
+                        <p class="c-black f-500 m-b-20 m-t-20">HAKI</p>
 
-                <div class="form-group">
-                    <p class="c-black f-500 m-b-20 m-t-20">Apakah Karya Anda Ingin di Publikasikan ?</p>
+                        <label class="radio radio-inline m-r-20">
+                            <input type="radio" name="haki" value="ya">
+                            <i class="input-helper"></i>
+                            Ya
+                        </label>
 
-                    <label class="radio radio-inline m-r-20">
-                        <input type="radio" name="publish" value="ya">
-                        <i class="input-helper"></i>
-                        Ya
-                    </label>
+                        <label class="radio radio-inline m-r-20">
+                            <input type="radio" name="haki" value="tidak">
+                            <i class="input-helper"></i>
+                            Tidak
+                        </label>
 
-                    <label class="radio radio-inline m-r-20">
-                        <input type="radio" name="publish" value="hanya_trailer">
-                        <i class="input-helper"></i>
-                        Hanya Trailer
-                    </label>
+                    </div>
 
-                    <label class="radio radio-inline m-r-20">
-                        <input type="radio" name="publish" value="tidak">
-                        <i class="input-helper"></i>
-                        Tidak
-                    </label>
+                    <div class="form-group">
+                        <p class="c-black f-500 m-b-20 m-t-20">DO HAKI</p>
 
-                </div>
+                        <label class="radio radio-inline m-r-20">
+                            <input type="radio" name="do_haki" value="ya">
+                            <i class="input-helper"></i>
+                            Ya
+                        </label>
+
+                        <label class="radio radio-inline m-r-20">
+                            <input type="radio" name="do_haki" value="tidak">
+                            <i class="input-helper"></i>
+                            Tidak
+                        </label>
+
+                    </div>
+
+                    <div class="form-group">
+                        <p class="c-black f-500 m-b-20 m-t-20">Apakah Karya Anda Ingin di Publikasikan ?</p>
+
+                        <label class="radio radio-inline m-r-20">
+                            <input type="radio" name="publish" value="ya">
+                            <i class="input-helper"></i>
+                            Ya
+                        </label>
+
+                        <label class="radio radio-inline m-r-20">
+                            <input type="radio" name="publish" value="hanya_trailer">
+                            <i class="input-helper"></i>
+                            Hanya Trailer
+                        </label>
+
+                        <label class="radio radio-inline m-r-20">
+                            <input type="radio" name="publish" value="tidak">
+                            <i class="input-helper"></i>
+                            Tidak
+                        </label>
+
+                    </div>
 
 
 
-                <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-sm m-t-10 waves-effect">Submit</button>
-                </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-sm m-t-10 waves-effect">Submit</button>
+                    </div>
 
             </div>
         </div>
 
     </div>
-
-
-
-
-
 
 @stop
