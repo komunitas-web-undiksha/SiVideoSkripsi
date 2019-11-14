@@ -18,7 +18,7 @@ class CreateKaryaTable extends Migration
             $table->string('judul',50);
             $table->string('directory_karya',50);
             $table->string('directory_trailer',50);
-            $table->string('directory_karya_edit',50);
+            $table->string('directory_karya_edit',50)->nullable();
             $table->enum('jenis', ['game','video','aplikasi']);
             $table->enum('haki', ['ya','tidak']);
             $table->enum('do_haki', ['ya','tidak']);
