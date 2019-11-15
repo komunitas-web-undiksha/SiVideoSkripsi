@@ -15,11 +15,20 @@ Route::get('/master', function () {
     return view('master');
 });
 
-Route::get('/karya','KaryaController@index')->name('karya.index');
-
-Route::post('/karya/store','KaryaController@store')->name('karya.store');
-
 Auth::routes();
+
+/*
+ * Just Route for Karya
+ * */
+Route::middleware()->group(function(){
+Route::get('/karya','KaryaController@index')->name('karya.index');
+Route::get('/karya/show/{nim}','KaryaController@show')->name('karya.show');
+Route::get('/karya/edit/{nim}','KaryaController@edit')->name('karya.edit');
+Route::post('/karya/update','KaryaController@update')->name('karya.update');
+Route::post('/karya/store','KaryaController@store')->name('karya.store');
+Route::get('/karya/destroy/{nim}','KaryaController@destroy')->name('karya.destroy');
+});
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
