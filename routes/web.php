@@ -20,7 +20,7 @@ Auth::routes();
 /*
  * Just Route for Karya
  * */
-Route::middleware()->group(function(){
+Route::middleware('auth')->group(function(){
 Route::get('/karya','KaryaController@index')->name('karya.index');
 Route::get('/karya/show/{nim}','KaryaController@show')->name('karya.show');
 Route::get('/karya/edit/{nim}','KaryaController@edit')->name('karya.edit');
@@ -60,6 +60,10 @@ Route::get('/Register', function () {
 
 Route::get('/ForgotP', function () {
     return view('ForgotP');
+});
+
+Route::get('/tes', function () {
+    return view('dashboard');
 });
 
 

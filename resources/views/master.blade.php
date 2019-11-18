@@ -1,227 +1,264 @@
-<!DOCTYPE html>
-<!--[if IE 9 ]><html class="ie9"><![endif]-->
+@extends('layouts.Main')
 
-<!-- Mirrored from byrushan.com/projects/mae/1-0/alternative-header.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Feb 2019 13:41:21 GMT -->
+@section('judul', 'Dashboard')
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> @yield('title') |SI Video Skripsi Undiksha</title>
-
-    <!-- Vendor CSS -->
-    <link href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
-    <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
-    <link href="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
-    <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css"
-        rel="stylesheet">
-    <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css"
-        rel="stylesheet">
-    <link href="vendors/bower_components/google-material-color/dist/palette.css" rel="stylesheet">
-
-    <!-- CSS -->
-    <link href="css/app.min.1.css" rel="stylesheet">
-    <link href="css/app.min.2.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-    {{-- Datatables --}}
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
-    <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.css">
-
-</head>
-
-<body style="background-color: white;">
-    <header id="header" class="media">
-        <div class="pull-left h-logo">
-            <a href="/" class="hidden-xs">
-                SI Video
-                <small>Undiksha</small>
-            </a>
-
-            <div class="menu-collapse" data-ma-action="sidebar-open" data-ma-target="main-menu">
-                <div class="mc-wrap">
-                    <div class="mcw-line top palette-White bg"></div>
-                    <div class="mcw-line center palette-White bg"></div>
-                    <div class="mcw-line bottom palette-White bg"></div>
+@section('konten')
+<div class="d-sm-flex justify-content-between align-items-center mb-4">
+    <h3 class="text-dark mb-0">Dashboard</h3><a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button"
+        href="#"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report</a>
+</div>
+<div class="row">
+    <div class="col-md-6 col-xl-3 mb-4">
+        <div class="card shadow border-left-primary py-2">
+            <div class="card-body">
+                <div class="row align-items-center no-gutters">
+                    <div class="col mr-2">
+                        <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>Earnings
+                                (monthly)</span></div>
+                        <div class="text-dark font-weight-bold h5 mb-0"><span>$40,000</span></div>
+                    </div>
+                    <div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>
                 </div>
             </div>
-        </div>
-
-        <ul class="pull-right h-menu">
-            <li class="hm-search-trigger">
-                <a href="#" data-ma-action="search-open">
-                    <i class="hm-icon zmdi zmdi-search"></i>
-                </a>
-            </li>
-
-            <li class="dropdown hidden-xs hidden-sm h-apps">
-                <a data-toggle="dropdown" href="#">
-                    <i class="hm-icon zmdi zmdi-email"></i>
-                </a>
-            </li>
-            <li class="dropdown hidden-xs">
-                <a data-toggle="dropdown" href="#"><i class="hm-icon zmdi zmdi-notifications"></i></a>
-            </li>
-            <li class="hm-alerts" data-user-alert="sua-messages" data-ma-action="sidebar-open"
-                data-ma-target="user-alerts">
-                <a href="#"><i class="hm-icon zmdi zmdi-notifications"></i></a>
-            </li>
-            <li class="dropdown hm-profile">
-                <a data-toggle="dropdown" href="#">
-                    <img src="img/profile-pics/1.jpg" alt="">
-                </a>
-
-                <ul class="dropdown-menu pull-right dm-icon">
-                    <li>
-                        <a href="profile-about.html"><i class="zmdi zmdi-account"></i> View Profile</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="zmdi zmdi-time-restore"></i> Logout</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-
-        <div class="media-body h-search">
-            <form class="p-relative">
-                <input type="text" class="hs-input" placeholder="Search any video">
-                <i class="zmdi zmdi-search hs-reset" data-ma-action="search-clear"></i>
-            </form>
-        </div>
-
-    </header>
-
-    <section id="main">
-
-        <aside style="background: #2d323d;" id="s-main-menu" class="sidebar">
-            <div class="smm-header">
-                <i class="zmdi zmdi-long-arrow-left" data-ma-action="sidebar-close"></i>
-            </div>
-
-            <ul class="main-menu">
-                <li>
-                    <a href="/"><i class="zmdi zmdi-home"></i>Dashboard</a>
-                </li>
-                <li>
-                        <a href="/read"><i class="zmdi zmdi-format-list-bulleted"></i>Item1</a>
-                    </li>
-                <li>
-                    <a href="/mahasiswa"><i class="zmdi zmdi-format-list-bulleted"></i>Upload Data Skripsi</a>
-                </li>
-            </ul>
-        </aside>
-
-        <section style="margin-left: 20px;" id="content">
-
-            @yield('content')
-
-        </section>
-
-        <footer id="footer">
-            Copyright &copy; 2015 Material Admin
-
-            <ul class="f-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Reports</a></li>
-                <li><a href="#">Support</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </footer>
-
-    </section>
-
-    <!-- Page Loader -->
-    <div class="page-loader palette-Light-Blue bg">
-        <div class="preloader pl-xl pls-white">
-            <svg class="pl-circular" viewBox="25 25 50 50">
-                <circle class="plc-path" cx="50" cy="50" r="20" />
-            </svg>
         </div>
     </div>
-
-    <!-- Older IE warning message -->
-    <!--[if lt IE 9]>
-            <div class="ie-warning">
-                <h1 class="c-white">Warning!!</h1>
-                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-                <div class="iew-container">
-                    <ul class="iew-download">
-                        <li>
-                            <a href="http://www.google.com/chrome/">
-                                <img src="img/browsers/chrome.png" alt="">
-                                <div>Chrome</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.mozilla.org/en-US/firefox/new/">
-                                <img src="img/browsers/firefox.png" alt="">
-                                <div>Firefox</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.opera.com">
-                                <img src="img/browsers/opera.png" alt="">
-                                <div>Opera</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.apple.com/safari/">
-                                <img src="img/browsers/safari.png" alt="">
-                                <div>Safari</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                                <img src="img/browsers/ie.png" alt="">
-                                <div>IE (New)</div>
-                            </a>
-                        </li>
-                    </ul>
+    <div class="col-md-6 col-xl-3 mb-4">
+        <div class="card shadow border-left-success py-2">
+            <div class="card-body">
+                <div class="row align-items-center no-gutters">
+                    <div class="col mr-2">
+                        <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>Earnings
+                                (annual)</span></div>
+                        <div class="text-dark font-weight-bold h5 mb-0"><span>$215,000</span></div>
+                    </div>
+                    <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
                 </div>
-                <p>Sorry for the inconvenience!</p>
             </div>
-        <![endif]-->
-
-    <!-- Javascript Libraries -->
-    <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <script src="vendors/bower_components/salvattore/dist/salvattore.min.js"></script>
-
-
-
-    <script src="vendors/bower_components/flot/jquery.flot.js"></script>
-    <script src="vendors/bower_components/flot/jquery.flot.resize.js"></script>
-    <script src="vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
-
-    <script src="vendors/sparklines/jquery.sparkline.min.js"></script>
-    <script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
-
-    <script src="vendors/bower_components/moment/min/moment.min.js"></script>
-    <script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
-    <script src="vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js"></script>
-    <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
-    <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
-    <script src="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
-    <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js">
-    </script>
-
-    <!-- Placeholder for IE9 -->
-    <!--[if IE 9 ]>
-            <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
-        <![endif]-->
-
-    <script src="js/flot-charts/curved-line-chart.js"></script>
-    <script src="js/flot-charts/bar-chart.js"></script>
-    <script src="js/charts.js"></script>
-
-    <script src="js/charts.js"></script>
-    <script src="js/functions.js"></script>
-    <script src="js/actions.js"></script>
-    <script src="js/demo.js"></script>
-
-</body>
-
-</html>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3 mb-4">
+        <div class="card shadow border-left-info py-2">
+            <div class="card-body">
+                <div class="row align-items-center no-gutters">
+                    <div class="col mr-2">
+                        <div class="text-uppercase text-info font-weight-bold text-xs mb-1"><span>Tasks</span></div>
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-auto">
+                                <div class="text-dark font-weight-bold h5 mb-0 mr-3"><span>50%</span></div>
+                            </div>
+                            <div class="col">
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-info" aria-valuenow="50" aria-valuemin="0"
+                                        aria-valuemax="100" style="width: 50%;"><span class="sr-only">50%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3 mb-4">
+        <div class="card shadow border-left-warning py-2">
+            <div class="card-body">
+                <div class="row align-items-center no-gutters">
+                    <div class="col mr-2">
+                        <div class="text-uppercase text-warning font-weight-bold text-xs mb-1"><span>Pending
+                                Requests</span></div>
+                        <div class="text-dark font-weight-bold h5 mb-0"><span>18</span></div>
+                    </div>
+                    <div class="col-auto"><i class="fas fa-comments fa-2x text-gray-300"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-7 col-xl-8">
+        <div class="card shadow mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h6 class="text-primary font-weight-bold m-0">Earnings Overview</h6>
+                <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle"
+                        data-toggle="dropdown" aria-expanded="false" type="button"><i
+                            class="fas fa-ellipsis-v text-gray-400"></i></button>
+                    <div class="dropdown-menu shadow dropdown-menu-right animated--fade-in" role="menu">
+                        <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item"
+                            role="presentation" href="#">&nbsp;Action</a><a class="dropdown-item" role="presentation"
+                            href="#">&nbsp;Another action</a>
+                        <div class="dropdown-divider"></div><a class="dropdown-item" role="presentation"
+                            href="#">&nbsp;Something else here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="chart-area"><canvas
+                        data-bs-chart="{&quot;type&quot;:&quot;line&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Jan&quot;,&quot;Feb&quot;,&quot;Mar&quot;,&quot;Apr&quot;,&quot;May&quot;,&quot;Jun&quot;,&quot;Jul&quot;,&quot;Aug&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;Earnings&quot;,&quot;fill&quot;:true,&quot;data&quot;:[&quot;0&quot;,&quot;10000&quot;,&quot;5000&quot;,&quot;15000&quot;,&quot;10000&quot;,&quot;20000&quot;,&quot;15000&quot;,&quot;25000&quot;],&quot;backgroundColor&quot;:&quot;rgba(78, 115, 223, 0.05)&quot;,&quot;borderColor&quot;:&quot;rgba(78, 115, 223, 1)&quot;}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{},&quot;scales&quot;:{&quot;xAxes&quot;:[{&quot;gridLines&quot;:{&quot;color&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;zeroLineColor&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;drawBorder&quot;:false,&quot;drawTicks&quot;:false,&quot;borderDash&quot;:[&quot;2&quot;],&quot;zeroLineBorderDash&quot;:[&quot;2&quot;],&quot;drawOnChartArea&quot;:false},&quot;ticks&quot;:{&quot;fontColor&quot;:&quot;#858796&quot;,&quot;padding&quot;:20}}],&quot;yAxes&quot;:[{&quot;gridLines&quot;:{&quot;color&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;zeroLineColor&quot;:&quot;rgb(234, 236, 244)&quot;,&quot;drawBorder&quot;:false,&quot;drawTicks&quot;:false,&quot;borderDash&quot;:[&quot;2&quot;],&quot;zeroLineBorderDash&quot;:[&quot;2&quot;]},&quot;ticks&quot;:{&quot;fontColor&quot;:&quot;#858796&quot;,&quot;padding&quot;:20}}]}}}"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5 col-xl-4">
+        <div class="card shadow mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h6 class="text-primary font-weight-bold m-0">Revenue Sources</h6>
+                <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle"
+                        data-toggle="dropdown" aria-expanded="false" type="button"><i
+                            class="fas fa-ellipsis-v text-gray-400"></i></button>
+                    <div class="dropdown-menu shadow dropdown-menu-right animated--fade-in" role="menu">
+                        <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item"
+                            role="presentation" href="#">&nbsp;Action</a><a class="dropdown-item" role="presentation"
+                            href="#">&nbsp;Another action</a>
+                        <div class="dropdown-divider"></div><a class="dropdown-item" role="presentation"
+                            href="#">&nbsp;Something else here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="chart-area"><canvas
+                        data-bs-chart="{&quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;,&quot;Referral&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#4e73df&quot;,&quot;#1cc88a&quot;,&quot;#36b9cc&quot;],&quot;borderColor&quot;:[&quot;#ffffff&quot;,&quot;#ffffff&quot;,&quot;#ffffff&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;30&quot;,&quot;15&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{}}}"></canvas>
+                </div>
+                <div class="text-center small mt-4"><span class="mr-2"><i
+                            class="fas fa-circle text-primary"></i>&nbsp;Direct</span><span class="mr-2"><i
+                            class="fas fa-circle text-success"></i>&nbsp;Social</span><span class="mr-2"><i
+                            class="fas fa-circle text-info"></i>&nbsp;Refferal</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6 mb-4">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="text-primary font-weight-bold m-0">Projects</h6>
+            </div>
+            <div class="card-body">
+                <h4 class="small font-weight-bold">Server migration<span class="float-right">20%</span></h4>
+                <div class="progress mb-4">
+                    <div class="progress-bar bg-danger" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+                        style="width: 20%;"><span class="sr-only">20%</span></div>
+                </div>
+                <h4 class="small font-weight-bold">Sales tracking<span class="float-right">40%</span></h4>
+                <div class="progress mb-4">
+                    <div class="progress-bar bg-warning" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                        style="width: 40%;"><span class="sr-only">40%</span></div>
+                </div>
+                <h4 class="small font-weight-bold">Customer Database<span class="float-right">60%</span></h4>
+                <div class="progress mb-4">
+                    <div class="progress-bar bg-primary" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                        style="width: 60%;"><span class="sr-only">60%</span></div>
+                </div>
+                <h4 class="small font-weight-bold">Payout Details<span class="float-right">80%</span></h4>
+                <div class="progress mb-4">
+                    <div class="progress-bar bg-info" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                        style="width: 80%;"><span class="sr-only">80%</span></div>
+                </div>
+                <h4 class="small font-weight-bold">Account setup<span class="float-right">Complete!</span></h4>
+                <div class="progress mb-4">
+                    <div class="progress-bar bg-success" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                        style="width: 100%;"><span class="sr-only">100%</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="text-primary font-weight-bold m-0">Todo List</h6>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col mr-2">
+                            <h6 class="mb-0"><strong>Lunch meeting</strong></h6><span class="text-xs">10:30
+                                AM</span>
+                        </div>
+                        <div class="col-auto">
+                            <div class="custom-control custom-checkbox"><input class="custom-control-input"
+                                    type="checkbox" id="formCheck-1"><label class="custom-control-label"
+                                    for="formCheck-1"></label></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col mr-2">
+                            <h6 class="mb-0"><strong>Lunch meeting</strong></h6><span class="text-xs">11:30
+                                AM</span>
+                        </div>
+                        <div class="col-auto">
+                            <div class="custom-control custom-checkbox"><input class="custom-control-input"
+                                    type="checkbox" id="formCheck-2"><label class="custom-control-label"
+                                    for="formCheck-2"></label></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col mr-2">
+                            <h6 class="mb-0"><strong>Lunch meeting</strong></h6><span class="text-xs">12:30
+                                AM</span>
+                        </div>
+                        <div class="col-auto">
+                            <div class="custom-control custom-checkbox"><input class="custom-control-input"
+                                    type="checkbox" id="formCheck-3"><label class="custom-control-label"
+                                    for="formCheck-3"></label></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col">
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card text-white bg-primary shadow">
+                    <div class="card-body">
+                        <p class="m-0">Primary</p>
+                        <p class="text-white-50 small m-0">#4e73df</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card text-white bg-success shadow">
+                    <div class="card-body">
+                        <p class="m-0">Success</p>
+                        <p class="text-white-50 small m-0">#1cc88a</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card text-white bg-info shadow">
+                    <div class="card-body">
+                        <p class="m-0">Info</p>
+                        <p class="text-white-50 small m-0">#36b9cc</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card text-white bg-warning shadow">
+                    <div class="card-body">
+                        <p class="m-0">Warning</p>
+                        <p class="text-white-50 small m-0">#f6c23e</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card text-white bg-danger shadow">
+                    <div class="card-body">
+                        <p class="m-0">Danger</p>
+                        <p class="text-white-50 small m-0">#e74a3b</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="card text-white bg-secondary shadow">
+                    <div class="card-body">
+                        <p class="m-0">Secondary</p>
+                        <p class="text-white-50 small m-0">#858796</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
